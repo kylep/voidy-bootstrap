@@ -79,13 +79,15 @@
       <p class="standfirst" itemprop="description">{{ article.standfirst|e }}</p>
     {% endif %}
     {% if article.image %}
-      <img class="article-image img-responsive" alt="article header image" itemprop="image"
-		   src="{{ SITEURL }}/images/{{ article.image }}" />
+      <img
+        itemprop="image"
+        src="{{ SITEURL }}/images/{{ article.image }}" />
     {% endif %}
     {% include "includes/" + CUSTOM_ARTICLE_PRECONTENT|default('article_precontent.html') ignore missing %}
+
 	{{ article.content }}
   </div>
-  
+
   {% for file in CUSTOM_ARTICLE_FOOTERS %}
     {% include "includes/" + file %}
   {% endfor %}
@@ -106,6 +108,27 @@
   </div>
   {% endif %}
 </article>
+
+
+<!-- Note(Kyle): Here are my modifications to voidy theme -->
+<hr />
+<p id="javascript_disabled">Javascript appears to be disabled. Comments can't load.</p>
+
+<!-- Javascript enabled/disabled notifcation -->
+<script type="text/javascript">
+  document.getElementById("javascript_disabled").style.display = 'none';;
+
+  if (document.cookie == ""){
+    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      // credit: https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
+      var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+      return v.toString(16);
+    });
+    document.cookie = ("uuid="+uuid);
+  }
+  console.log(' ! Heres your current cookie', document.cookie);
+</script>
+
 {% endblock content_body %}
 
 {% block    content_footer %}
