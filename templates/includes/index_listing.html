@@ -1,0 +1,28 @@
+<article class="index-article">
+  <div class="index-thumb-spacer">
+    <div class="index-thumb-backdrop">
+			{% if article.thumbnail %}
+				<img src="{{ SITEURL }}/images/{{ article.thumbnail }}"
+             class="index-thumb-img"	alt="{{ article.title }}"/>
+			{% else %}
+				&nbsp;
+			{% endif %}
+		</div>
+	</div>
+	<div class="index-article-txt">
+		<h4 class="index-artcile-h4">
+			<a href='{{ SITEURL }}/{{ article.url }}'>{{ article.title }}</a>
+		</h4>
+    <span class="index-timestamp">
+      {{ article.date|strftime('%d %B %Y') }} in
+  		<a href="{{ SITEURL }}/{{ article.category.url }}">
+        {{ article.category }}
+      </a>
+    </span>
+    </br >
+		<span class="index-summary-txt">
+			{{ article.summary}}
+		</span>
+	</div>
+</article>
+<hr />
