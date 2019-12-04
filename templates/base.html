@@ -110,11 +110,18 @@
             </li>
           <li class="divider"></li>
           {% if FEED_ALL_ATOM %}
-            <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" 
+            <li><a href="{{ SITEURL }}/{{ feeds/all.atom.xml }}"
                    type="application/atom+xml" rel="alternate">
                 <i class="fas fa-rss fa-fw fa-lg"></i> </a></li>
           {% endif %}
         </ul> <!-- /nav -->
+        <div style="float: right" id="sign-in-div">
+          <ul class="nav navbar-nav">
+            <li style="float: right;">
+              {% include "includes/sign-in.html" %}
+            </li>
+          </ul>
+        </div><!-- /sign-in div
       </div> <!-- /navbar-collapse -->
 	  </div> <!-- /container -->
     </nav> <!-- /navbar -->

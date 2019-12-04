@@ -1,0 +1,32 @@
+<script type="text/javascript">
+  var modal = document.getElementById("sign-in-modal");
+  show_modal = function(){
+    console.log('displaying sign-in modal');
+    //var btn = document.getElementById("myBtn");
+  };
+</script>
+<style>
+.sign-in{
+  font-weight: bold;
+}
+
+.modal{
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.sign-in:hover{
+  cursor: pointer;
+}
+</style>
+<a class="sign-in" onclick="show_modal()">
+  Sign In
+</a>
+
+<div id="sign-in-modal">
+</div>
